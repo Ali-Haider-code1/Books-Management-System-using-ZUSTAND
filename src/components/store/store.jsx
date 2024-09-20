@@ -7,8 +7,8 @@ const useBookStore = create((set) => ({
     updateBook: (id, UpdatedData) => set(state => ({
         books: state.books.map(book => (book.id === id ? { ...book, ...UpdatedData } : book))
     })),
-    viewBook: (id) => set(state => {
-        const book = state.books.find(item => item.id === id);
+    viewBook: (name) => set(state => {
+        const book = state.books.find(item => item.name === name);
         return { viewedBook: book || null };
     }),
 
